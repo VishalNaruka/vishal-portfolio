@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishal Singh Naruka | Senior XR & Unity Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131c2e;
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(79, 172, 254, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .hero {
+            padding: 100px 8% 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #0b0f19;
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 242, 254, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--accent-cyan);
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1);
+        }
+
+        .project-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            header { padding: 15px 5%; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Vishal Singh Naruka</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Expertise</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="about">
+        <div class="badge">🌐 Open to Senior XR & Unity Opportunities</div>
+        <h1>Senior XR & Unity Engineer</h1>
+        <p>Architecting enterprise-grade AR/VR, Mixed Reality, and Digital Twin applications across industrial, healthcare, and smart infrastructure sectors with 7+ years of expertise[cite: 2, 3].</p>
+        <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">Explore Projects</a>
+            <a href="mailto:vishalnaruka33@gmail.com" class="btn btn-outline">Get in Touch</a>
+        </div>
+    </section>
+
+    <section class="container" id="skills">
+        <h2>Core Technical Stack</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>XR Platforms & Hardware</h3>
+                <p>HoloLens 2, Meta Quest Pro/3/2, HTC Vive, ARCore, ARKit, Vuforia, MRTK, OpenXR[cite: 2, 3].</p>
+            </div>
+            <div class="skill-card">
+                <h3>Engines & Languages</h3>
+                <p>Unity Engine (URP/HDRP), C#, C++, HLSL Shader Programming[cite: 2, 3].</p>
+            </div>
+            <div class="skill-card">
+                <h3>Architectures & Domains</h3>
+                <p>ScriptableObject Architecture, OOP Design Patterns, Digital Twins, Indoor Navigation, Medical Therapeutics[cite: 2, 3].</p>
+            </div>
+            <div class="skill-card">
+                <h3>Performance & Tools</h3>
+                <p>Zero-Allocation Optimization, Profiling, REST APIs, Git, CI/CD Pipeline Automation[cite: 2, 3].</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="projects">
+        <h2>Featured Impact Projects</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div>
+                    <div class="project-tag">Bahwan CyberTek • Public Infrastructure</div>
+                    <h3>NCRTC AR Indoor Navigation</h3>
+                    <p>Built a public-facing indoor AR navigation application for rapid transit metro stations. Passengers select destinations and receive real-time routing via dynamic AR floor paths and an animated robot companion[cite: 2].</p>
+                </div>
+                <div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">ARCore/ARKit</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">URP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-tag">Bahwan CyberTek • Smart Infrastructure</div>
+                    <h3>DEWA Mixed Reality Viewer</h3>
+                    <p>Engineered an MR see-through infrastructure viewer on HoloLens 2 allowing engineers to inspect hidden pipe networks behind walls at exact spatial coordinates, integrated with live REST API IoT feeds[cite: 2].</p>
+                </div>
+                <div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HoloLens 2</span>
+                        <span class="tech-tag">OpenXR</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">MRTK</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-tag">Enso Immersive • Healthcare & MedTech</div>
+                    <h3>Clinical Vertigo & Rehab Suite</h3>
+                    <p>Developed a specialized vertigo diagnostic and treatment platform integrating custom gyroscopic hardware, HTC Vive, and Unity to accurately identify vestibular disorders and administer targeted maneuvers[cite: 3].</p>
+                </div>
+                <div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">HTC Vive</span>
+                        <span class="tech-tag">Hardware Integration</span>
+                        <span class="tech-tag">C#</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <div class="project-tag">Enso Immersive • Enterprise Training</div>
+                    <h3>Industrial Safety Simulator</h3>
+                    <p>Architected physics-accurate VR safety training simulators deployed to over 3,000 industrial workers, achieving a 45% improvement in post-training knowledge retention compared to legacy manuals[cite: 3].</p>
+                </div>
+                <div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">VR Interaction Toolkit</span>
+                        <span class="tech-tag">Performance Profiling</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container" id="contact" style="text-align: center;">
+        <h2>Let's Build Something Exceptional</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 30px;">Currently open for senior full-time, contract, or remote roles worldwide. Reach out directly via email or LinkedIn.</p>
+        <div class="btn-group">
+            <a href="mailto:vishalnaruka33@gmail.com" class="btn btn-primary">vishalnaruka33@gmail.com[cite: 2]</a>
+            <a href="https://linkedin.com/in/vishal-singh-naruka-9aa4b5156" target="_blank" class="btn btn-outline">LinkedIn Profile[cite: 2]</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Vishal Singh Naruka. Designed for maximum enterprise impact.</p>
+    </footer>
+
+</body>
+</html>

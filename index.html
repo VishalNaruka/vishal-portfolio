@@ -2,73 +2,100 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vishal Singh Naruka | Senior XR & Unity Engineer</title>
-<meta name="description" content="Senior XR and Unity engineer building AR, VR and mixed reality products for transit, utilities and healthcare.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vishal Singh Naruka | Senior XR & Unity Engineer, Game Developer</title>
+<meta name="description" content="Senior XR and Unity engineer and game developer. 20+ AR, VR and mixed reality products for transit, utilities, healthcare and industry.">
+<meta name="theme-color" content="#070b12">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top">
-  <a class="logo" href="#top">Vishal Singh Naruka</a>
-  <nav><a href="#work">Work</a><a href="#path">Experience</a><a href="#stack">Skills</a><a href="#contact">Contact</a></nav>
+  <a class="logo" href="#top"><span class="px">VSN</span> Vishal Singh Naruka</a>
+  <nav aria-label="Sections"><a href="#work">Levels</a><a href="#quests">Quests</a><a href="#stats">Stats</a><a href="#bonus">Play</a><a href="#contact">Contact</a></nav>
 </header>
 
 <main id="top">
 <section class="hero" id="hero">
   <canvas id="net" aria-hidden="true"></canvas>
   <div class="hero-copy">
-    <p class="open">Open to senior XR roles, full-time or contract</p>
-    <h1>I build XR that shows people what they can't see.</h1>
-    <p class="lede">Move your cursor over this page. Hidden pipework appears behind the surface, the same idea as the HoloLens 2 viewer I built for DEWA & NCRTC engineers. <br>7+ years shipping AR, VR and mixed reality for transit, utilities and healthcare.</p>
-    <p class="cta"><a class="btn" href="#work">See the work</a> <a class="btn ghost" href="tel:+917891766464">Call +91 78917 66464</a></p>
+    <p class="tag px">Player 1</p>
+    <h1>Vishal Singh Naruka</h1>
+    <p class="class">Senior XR &amp; Unity Engineer <span>·</span> Game Developer</p>
+    <p class="lede">I build AR, VR and mixed reality that shows people what they can't see, and games that are fun to play. Drag across the screen to reveal the hidden pipe network, just like the HoloLens 2 viewer I built for DEWA engineers.</p>
+    <div class="xp" aria-label="Experience: 7 plus years">
+      <span class="px">LVL 7+</span><div class="bar"><i></i></div><span class="xp-l">years shipping XR</span>
+    </div>
+    <p class="cta"><a class="btn start" href="#work"><span class="px">Press start</span></a> <a class="btn ghost" href="#bonus">Play the mini-game</a></p>
+    <p class="open">Open to senior XR and game roles, full-time or contract</p>
   </div>
 </section>
 
-<section class="stats" aria-label="Results">
-  <div><b data-n="7" data-s="+">0</b><span>years in XR</span></div>
-  <div><b data-n="20" data-s="+">0</b><span>XR products delivered</span></div>
-  <div><b data-n="3000" data-s="+">0</b><span>workers using the training and field tools</span></div>
-  <div><b data-n="40" data-s="%">0</b><span>faster on-site resolution with AR remote assistance</span></div>
+<section class="wrap" id="achievements" aria-labelledby="ach-h">
+  <h2 id="ach-h"><span class="px h-tag">Unlocked</span>Achievements</h2>
+  <ul class="ach">
+    <li><b data-n="20" data-s="+">0</b><span>XR products shipped</span></li>
+    <li><b data-n="3000" data-s="+">0</b><span>workers trained with my VR and AR tools</span></li>
+    <li><b data-n="40" data-s="%">0</b><span>faster on-site fixes with AR remote assistance</span></li>
+    <li><b data-n="60" data-s="%">0</b><span>faster technician onboarding with AR guides</span></li>
+    <li><b data-n="45" data-s="%">0</b><span>higher training scores than classroom methods</span></li>
+    <li><b data-n="60" data-s=" FPS">0</b><span>held on standalone headsets, 35% fewer draw calls</span></li>
+  </ul>
 </section>
 
-<section id="work" class="wrap">
-  <h2>Work</h2>
-  <div id="filters" class="filters" role="group" aria-label="Filter projects"></div>
-  <ul id="list" class="list"></ul>
+<section id="work" class="wrap" aria-labelledby="work-h">
+  <h2 id="work-h"><span class="px h-tag">Select</span>Levels</h2>
+  <p class="sub">Every project is a level. Pick a world, then tap a card for the mission briefing.</p>
+  <div id="worlds" class="worlds" role="group" aria-label="Filter by world"></div>
+  <ul id="list" class="grid"></ul>
 </section>
 
-<section id="path" class="wrap">
-  <h2>Experience</h2>
-  <ol class="timeline">
-    <li><time>May 2024 to now</time><h3>Senior Software Engineer, XR at Bahwan CyberTek</h3><p>New Delhi. Enterprise XR for NCRTC (India) and DEWA (UAE): indoor AR navigation, HoloLens 2 see-through infrastructure viewer, IoT digital twin, remote assistance. Held 60 FPS on standalone headsets and cut GPU draw calls by 35% on URP.</p></li>
-    <li><time>Feb 2019 to Feb 2024</time><h3>Senior XR Developer at Enso Immersive</h3><p>Jaipur. 10+ AR, VR and MR products for industrial, healthcare and enterprise clients on HoloLens, Meta Quest, HTC Vive, iOS and Android. Mentored junior developers and cut merge conflicts by 50% with a Git branching strategy.</p></li>
-    <li><time>2017 to 2018</time><h3>Early roles and training</h3><p>XR developer intern at Enigma Virtulux Infosoft. Game development intern and PG Diploma at Anibrain School of Media Design. BCA, SunRise University.</p></li>
+<section id="quests" class="wrap" aria-labelledby="q-h">
+  <h2 id="q-h"><span class="px h-tag">Log</span>Quests</h2>
+  <ol class="quests">
+    <li class="active"><p class="q-state px">Main quest · active</p><time>May 2024 to now</time><h3>Senior Software Engineer, XR</h3><p class="q-org">Bahwan CyberTek, New Delhi</p><p>Enterprise XR for NCRTC (India) and DEWA (UAE): indoor AR navigation, HoloLens 2 see-through infrastructure viewer, IoT digital twin and remote assistance. Held 60 FPS on standalone headsets and cut GPU draw calls by 35% on URP.</p></li>
+    <li><p class="q-state px">Completed</p><time>Feb 2019 to Feb 2024</time><h3>Senior XR Developer</h3><p class="q-org">Enso Immersive, Jaipur</p><p>Shipped AR, VR and MR products for industrial, healthcare and enterprise clients on HoloLens, Meta Quest, HTC Vive, iOS and Android, including VR therapy for phobias, motion sickness, sea sickness and vertigo. Mentored junior developers and cut merge conflicts by 50% with a Git branching strategy.</p></li>
+    <li><p class="q-state px">Tutorial</p><time>2017 to 2018</time><h3>Early roles and training</h3><p class="q-org">Pune</p><p>XR developer intern at Enigma Virtulux Infosoft. Game development intern and PG Diploma in Game Development at Anibrain School of Media Design: 2D and 3D mechanics, AI behaviour trees and shaders. BCA, SunRise University.</p></li>
   </ol>
 </section>
 
-<section id="stack" class="wrap">
-  <h2>Skills</h2>
-  <dl class="skills">
-    <dt>Game development & engines</dt><dd>Unity (2D & 3D), 2D/3D physics simulation, gameplay architecture, action platformers & Metroidvanias, state machines (HFSM), game mechanics</dd>
-    <dt>XR platforms</dt><dd>HoloLens 2, Meta Quest, HTC Vive, ARCore, ARKit, Vuforia, MRTK, OpenXR, WebXR</dd>
-    <dt>Languages & framework</dt><dd>C#, C++, Unity (URP and HDRP), HLSL, VContainer</dd>
-    <dt>Domains</dt><dd>Action game dev, industrial XR, healthcare XR, spatial computing, digital twins, remote assistance, training simulation</dd>
-    <dt>Engineering practice</dt><dd>Zero-allocation hot paths, Addressables, Git, OOP design patterns, CI/CD, performance profiling, 3D math</dd>
-  </dl>
+<section id="stats" class="wrap" aria-labelledby="s-h">
+  <h2 id="s-h"><span class="px h-tag">Character</span>Skill tree</h2>
+  <div class="tree">
+    <details open><summary>Game development</summary><p>Unity 2D and 3D, gameplay architecture, action platformers and Metroidvanias, hierarchical state machines (HFSM), 2D and 3D physics, AI behaviour trees, game feel</p></details>
+    <details><summary>XR platforms</summary><p>HoloLens 2, Meta Quest, HTC Vive, ARCore, ARKit, Vuforia, MRTK, OpenXR, WebXR</p></details>
+    <details><summary>Languages and engine</summary><p>C#, C++, Unity (URP and HDRP), HLSL, VContainer</p></details>
+    <details><summary>Performance</summary><p>60 FPS on standalone headsets, zero-allocation hot paths, batching and LOD, Addressables, profiling</p></details>
+    <details><summary>Domains</summary><p>Games, industrial XR, healthcare XR, spatial computing, digital twins, remote assistance, training simulation</p></details>
+    <details><summary>Engineering practice</summary><p>Git, CI/CD, OOP design patterns, Agile/Scrum, 3D math, mentoring</p></details>
+  </div>
 </section>
 
-<section id="contact" class="wrap contact">
-  <h2>Contact</h2>
-  <p>Fastest way to reach me is a call or an email.</p>
+<section id="bonus" class="wrap" aria-labelledby="b-h">
+  <h2 id="b-h"><span class="px h-tag">Bonus</span>Pipe Runner</h2>
+  <p class="sub">A tiny game made for this page. Tap the screen or press Space to jump over the pipes.</p>
+  <div class="game">
+    <canvas id="game" width="440" height="260" aria-label="Pipe Runner mini-game"></canvas>
+    <div class="game-ui" id="gameUi"><p class="px">Pipe Runner</p><p id="gameMsg">Tap to start</p><button class="btn start" id="gameBtn"><span class="px">Start</span></button></div>
+  </div>
+  <p class="hi">Best: <b id="best">0</b></p>
+</section>
+
+<section id="contact" class="wrap contact" aria-labelledby="c-h">
+  <h2 id="c-h"><span class="px h-tag">Co-op</span>Join my party</h2>
+  <p>Looking for an XR or Unity engineer? The fastest way to reach me is a call or an email.</p>
   <p class="cta"><a class="btn" href="tel:+917891766464">Call +91 78917 66464</a> <a class="btn ghost" href="mailto:vishalnaruka33@gmail.com">vishalnaruka33@gmail.com</a> <a class="btn ghost" href="https://www.linkedin.com/in/vishal-singh-naruka-9aa4b5156/" target="_blank" rel="noopener">LinkedIn</a></p>
 </section>
 </main>
 
-<footer>© 2026 Vishal Singh Naruka, New Delhi</footer>
+<footer>© 2026 Vishal Singh Naruka, New Delhi <span class="px">Game saved</span></footer>
 
-<dialog id="modal" aria-labelledby="mt"><button class="x" id="close" aria-label="Close">Close</button><div id="mbody"></div></dialog>
+<nav class="dock" aria-label="Quick contact">
+  <a href="tel:+917891766464">Call</a><a href="mailto:vishalnaruka33@gmail.com">Email</a><a href="https://www.linkedin.com/in/vishal-singh-naruka-9aa4b5156/" target="_blank" rel="noopener">LinkedIn</a>
+</nav>
+
+<dialog id="modal" aria-labelledby="mt"><button class="x" id="close" aria-label="Close briefing">✕</button><div id="mbody"></div></dialog>
 
 <script src="projects.js"></script>
 <script src="app.js"></script>

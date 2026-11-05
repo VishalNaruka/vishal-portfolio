@@ -104,7 +104,7 @@ const GW=box.clientWidth<600?440:720,GH=260,GROUND=214; /* narrower world on pho
 let best=+store.get('pr-best')||0;bestEl.textContent=best;
 let overAt=0,st='idle',bot,obs,chips,speed,dist,score,spawn,last,visible=false,raf=0;
 (function scale(){const d=Math.min(devicePixelRatio||1,2);gc.style.aspectRatio=GW+'/'+GH;gc.width=GW*d;gc.height=GH*d;g.setTransform(d,0,0,d,0,0)})();
-function reset(){bot={x:GW<600?60:90,y:GROUND-34,vy:0,w:30,h:34,ground:true};obs=[];chips=[];speed=reduce?4:5;dist=0;score=0;spawn=60}
+function reset(){bot={x:GW<600?60:90,y:GROUND-34,vy:0,w:30,h:34,ground:true};obs=[];chips=[];speed=reduce?4:4.5;dist=0;score=0;spawn=100}
 function jump(){if(st!=='run')return;if(bot.ground){bot.vy=-11.5;bot.ground=false}}
 function start(){visible=true;reset();st='run';ui.hidden=true;last=performance.now();cancelAnimationFrame(raf);raf=requestAnimationFrame(loop)}
 function over(){
@@ -147,9 +147,20 @@ function loop(t){
   render();if(st==='run')raf=requestAnimationFrame(loop);
 }
 reset();render();
-gbtn.onclick=e=>{e.stopPropagation();if(st==='paused'){st='run';ui.hidden=true;last=performance.now();raf=requestAnimationFrame(loop)}else start()};
-box.addEventListener('pointerdown',e=>{if(e.target.closest('#gameBtn'))return;if(st==='run')jump();else if(st==='idle'||(st==='over'&&performance.now()-overAt>600))start()});
-addEventListener('keydown',e=>{if((e.code==='Space'||e.code==='ArrowUp')&&st==='run'&&visible){e.preventDefault();jump()}});
+/* One action for every input: jump while running, otherwise start, retry or resume */
+function act(){
+  if(st==='run')return jump();
+  if(st==='paused'){visible=true;st='run';ui.hidden=true;last=performance.now();raf=requestAnimationFrame(loop);return}
+  if(st==='idle'||(st==='over'&&performance.now()-overAt>600))start();
+}
+gbtn.onclick=e=>{e.stopPropagation();gbtn.blur();act()};
+box.addEventListener('pointerdown',e=>{if(e.target.closest('#gameBtn'))return;e.preventDefault();act()});
+addEventListener('keydown',e=>{
+  if(!(e.code==='Space'||e.code==='ArrowUp'||e.code==='KeyW'))return;
+  const r=box.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return; /* only when the game is on screen */
+  if(e.target.closest&&e.target.closest('input,textarea,dialog'))return;
+  e.preventDefault();if(!e.repeat)act();
+});
 function pause(){if(st!=='run')return;st='paused';cancelAnimationFrame(raf);ui.hidden=false;msg.textContent='Paused';gbtn.querySelector('.px').textContent='Resume'}
 new IntersectionObserver(([en])=>{visible=en.isIntersecting;if(!visible)pause()},{threshold:.2}).observe(box);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});

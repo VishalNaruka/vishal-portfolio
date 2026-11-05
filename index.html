@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#070b12">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 <header class="top">
@@ -24,8 +24,8 @@
     <h1>Vishal Singh Naruka</h1>
     <p class="class">Senior XR &amp; Unity Engineer <span>·</span> Game Developer</p>
     <p class="lede">I build AR, VR and mixed reality that shows people what they can't see, and games that are fun to play. Drag across the screen to reveal the hidden pipe network, just like the HoloLens 2 viewer I built for DEWA engineers.</p>
-    <div class="xp" aria-label="Experience: 7 plus years">
-      <span class="px">LVL 7+</span><div class="bar"><i></i></div><span class="xp-l">years shipping XR</span>
+    <div class="xp" id="xp" data-since="2019-02" aria-label="Experience: 7 plus years">
+      <span class="px" id="lvl">LVL 7+</span><div class="bar"><i id="xpbar"></i></div><span class="xp-l">years shipping XR</span>
     </div>
     <p class="cta"><a class="btn start" href="#work"><span class="px">Press start</span></a> <a class="btn ghost" href="#contact">Join my party</a></p>
     <p class="open">Open to senior XR and game roles, full-time or contract</p>
@@ -54,7 +54,7 @@
 <section id="quests" class="wrap" aria-labelledby="q-h">
   <h2 id="q-h"><span class="px h-tag">Log</span>Quests</h2>
   <ol class="quests">
-    <li class="active"><p class="q-state px">Main quest · active</p><time>May 2024 to now</time><h3>Senior Software Engineer, XR</h3><p class="q-org">Bahwan CyberTek, New Delhi</p><p>Enterprise XR for NCRTC (India) and DEWA (UAE): indoor AR navigation, HoloLens 2 see-through infrastructure viewer, IoT digital twin and remote assistance. Held 60 FPS on standalone headsets and cut GPU draw calls by 35% on URP.</p></li>
+    <li class="active"><p class="q-state px">Main quest · active</p><time data-from="2024-05">May 2024 to now</time><h3>Senior Software Engineer, XR</h3><p class="q-org">Bahwan CyberTek, New Delhi</p><p>Enterprise XR for NCRTC (India) and DEWA (UAE): indoor AR navigation, HoloLens 2 see-through infrastructure viewer, IoT digital twin and remote assistance. Held 60 FPS on standalone headsets and cut GPU draw calls by 35% on URP.</p></li>
     <li><p class="q-state px">Completed</p><time>Feb 2019 to Feb 2024</time><h3>Senior XR Developer</h3><p class="q-org">Enso Immersive, Jaipur</p><p>Shipped AR, VR and MR products for industrial, healthcare and enterprise clients on HoloLens, Meta Quest, HTC Vive, iOS and Android, including VR therapy for phobias, motion sickness, sea sickness and vertigo. Mentored junior developers and cut merge conflicts by 50% with a Git branching strategy.</p></li>
     <li><p class="q-state px">Tutorial</p><time>2017 to 2018</time><h3>Early roles and training</h3><p class="q-org">Pune</p><p>XR developer intern at Enigma Virtulux Infosoft. Game development intern and PG Diploma in Game Development at Anibrain School of Media Design: 2D and 3D mechanics, AI behaviour trees and shaders. BCA, SunRise University.</p></li>
   </ol>
@@ -80,7 +80,7 @@
 </section>
 </main>
 
-<footer>© 2026 Vishal Singh Naruka, New Delhi <span class="px">Game saved</span></footer>
+<footer>© <span id="yr">2026</span> Vishal Singh Naruka, New Delhi <span class="px">Game saved</span></footer>
 
 <nav class="dock" aria-label="Quick contact">
   <a href="tel:+917891766464">Call</a><a href="mailto:vishalnaruka33@gmail.com">Email</a><a href="https://www.linkedin.com/in/vishal-singh-naruka-9aa4b5156/" target="_blank" rel="noopener">LinkedIn</a>
@@ -88,7 +88,7 @@
 
 <dialog id="modal" aria-labelledby="mt"><button class="x" id="close" aria-label="Close briefing">✕</button><div id="mbody"></div></dialog>
 
-<script src="projects.js?v=5"></script>
-<script src="app.js?v=5"></script>
+<script src="projects.js?v=6"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

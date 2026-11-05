@@ -56,6 +56,18 @@ $('#close').onclick=()=>modal.close();
 modal.onclick=e=>{if(e.target===modal)modal.close()};
 modal.onclose=()=>{body.innerHTML=''}; /* clearing the DOM stops any playing video */
 
+/* Dates that update themselves. Years of XR experience count from the first full-time XR role
+   (Senior XR Developer at Enso Immersive, Feb 2019). Change data-since in index.html to move it. */
+(()=>{
+  const now=new Date(),months=s=>{const [y,m]=s.split('-').map(Number);return (now.getFullYear()-y)*12+(now.getMonth()+1-m)};
+  const xp=$('#xp'),total=months(xp.dataset.since),yrs=Math.floor(total/12);
+  $('#lvl').textContent=`LVL ${yrs}+`;xp.setAttribute('aria-label',`Experience: ${yrs} plus years`);
+  $('#xpbar').style.width=Math.max(8,Math.round((total%12)/12*100))+'%'; /* bar fills toward the next level */
+  $('#yr').textContent=now.getFullYear();
+  document.querySelectorAll('time[data-from]').forEach(t=>{const m=months(t.dataset.from)+1,y=Math.floor(m/12),r=m%12;
+    t.textContent+=` · ${[y&&`${y} yr${y>1?'s':''}`,r&&`${r} mo${r>1?'s':''}`].filter(Boolean).join(' ')}`});
+})();
+
 /* Achievement counters, run once when visible */
 const io=new IntersectionObserver(es=>es.forEach(en=>{
   if(!en.isIntersecting)return;io.unobserve(en.target);

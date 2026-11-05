@@ -1,3 +1,4 @@
+/* When you change style.css, app.js or projects.js, bump the ?v= number on their links in index.html so visitors get the new files instead of cached ones. */
 /* Edit this file to add or change projects. Each project becomes a "level" card.
    world: AR, VR, MR, Twin, Tools or Games. It sets the card colour (rarity) and the world tab.
    video: YouTube or Vimeo link, or a path to an .mp4 in this repo (e.g. "media/ncrtc.mp4").

@@ -105,14 +105,6 @@ h2{font-size:clamp(1.7rem,6vw,2.3rem);margin-bottom:18px;font-weight:700;display
 .tree details[open]{border-color:color-mix(in srgb,var(--lens) 40%,var(--line))}
 .tree p{padding:0 16px 16px;color:var(--muted)}
 
-/* Mini-game */
-.game{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#05080d;touch-action:manipulation;user-select:none;-webkit-user-select:none}
-#game{display:block;width:100%;height:auto;aspect-ratio:720/260}
-.game-ui{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;background:rgba(5,8,13,.72);padding:12px}
-.game-ui[hidden]{display:none}
-.game-ui .px{font-size:.8rem;color:var(--pink)}
-.game-ui p{color:var(--muted)}
-.hi{color:var(--muted);margin-top:10px;font-size:.92rem}.hi b{color:var(--amber)}
 
 .contact p{color:var(--muted);margin-bottom:18px}
 footer{text-align:center;color:var(--muted);padding:56px 16px calc(40px + var(--dock));font-size:.88rem}

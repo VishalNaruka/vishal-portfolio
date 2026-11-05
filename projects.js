@@ -64,9 +64,5 @@ window.PROJECTS = [
  { id:"realsense", world:"Tools", title:"RealSense face mimic & mapping", org:"Immative Technologies", cats:["Computer vision"],
    summary:"Unity-based developer utility utilizing Intel RealSense facial tracking hardware to drive character avatars and expressions in real time.",
    impact:"Enabled rapid facial capture prototyping.", stack:["Unity","Intel RealSense SDK","C#"],
-   video:"https://youtu.be/cCiQPZHGRXQ", thumb:"", playStore:"", appStore:"", demo:"" },
- { id:"pipe-runner", world:"Games", title:"Pipe Runner (play it here)", org:"Bonus level, built for this site", cats:["Playable"],
-   summary:"A tiny endless runner made for this portfolio. Guide the AR robot companion over pipe junctions and collect chips. Tap or press Space to jump.",
-   impact:"Playable right on this page, on phone or desktop.", stack:["JavaScript","Canvas 2D","Game feel"],
-   video:"", thumb:"", playStore:"", appStore:"", demo:"#bonus" }
+   video:"https://youtu.be/cCiQPZHGRXQ", thumb:"", playStore:"", appStore:"", demo:"" }
 ];

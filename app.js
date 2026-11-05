@@ -85,7 +85,10 @@ function build(){
 build();let rw=innerWidth;addEventListener('resize',()=>{if(innerWidth!==rw){rw=innerWidth;build()}}); /* ignore mobile URL-bar height changes */
 const setLens=(x,y)=>{cv.style.setProperty('--mx',x+'px');cv.style.setProperty('--my',y+'px')};
 let used=false;
-hero.addEventListener('pointermove',e=>{used=true;const r=hero.getBoundingClientRect();setLens(e.clientX-r.left,e.clientY-r.top)});
+/* Mouse leaving the title screen hides the lens instead of leaving a half-revealed patch behind */
+hero.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')cv.classList.add('off')});
+hero.addEventListener('pointerenter',()=>cv.classList.remove('off'));
+hero.addEventListener('pointermove',e=>{used=true;cv.classList.remove('off');const r=hero.getBoundingClientRect();setLens(e.clientX-r.left,e.clientY-r.top)});
 hero.addEventListener('pointerdown',e=>{used=true;const r=hero.getBoundingClientRect();setLens(e.clientX-r.left,e.clientY-r.top)});
 addEventListener('deviceorientation',e=>{ /* Android tilt; iOS needs a permission prompt, so it just keeps drifting there */
   if(e.gamma==null||e.beta==null)return;used=true;
